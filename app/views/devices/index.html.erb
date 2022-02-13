@@ -1,2 +1,15 @@
-<h1>Devices#index</h1>
-<p>Find me in app/views/devices/index.html.erb</p>
+<h1>Available devices</h1>
+<p>List of devices, choose which one you want to check</p>
+<% @devices.each do |t| %>
+  <p><%= t.name %>   <%= link_to 'Show', device_path(t.id) %>
+  <%= link_to 'Rename', edit_device_path(t.id) %>
+  <td><%= link_to 'Destroy', device_path(t.id),
+                  method: :delete,
+                  data: { confirm: 'Confirm removal of this device' } %></td></p>
+<% end %>
+
+<!--moze pokazywac tylko urzadzenia dla danego uzytkownika. zalezne od decyzji projektowej-->
+
+
+
+<%= link_to 'Add new device', new_device_path %>

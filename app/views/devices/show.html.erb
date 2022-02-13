@@ -1,2 +1,12 @@
-<h1>Devices#show</h1>
-<p>Find me in app/views/devices/show.html.erb</p>
+<p>
+  <strong>Device:</strong>
+  <%= @device.name %>
+</p>
+<p>
+  <strong>Plants monitored by this device</strong>
+  <%= @device.plants.each do |plant| %>
+    <%= plant.name %>
+  <% end %>
+</p>
+
+<%= link_to 'Back', devices_path %>

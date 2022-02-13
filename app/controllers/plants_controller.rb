@@ -13,6 +13,8 @@ class PlantsController < ApplicationController
   end
 
   def create
+    # @device = Device.new(params[:device_id])
+    # @plant = @device.schedule.create(plant_params)
     @plant = Plant.new(plant_params)
 
     if @plant.save
