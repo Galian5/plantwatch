@@ -12,7 +12,7 @@ planowane funkcjonalności:
 - prezentowanie danych historycznych dla wybranego zestawu czujników
 - powiadomienia o przekroczeniu określonej wartości mierzonej przez czujnik
 - możliwość konfiguracji dopuszczalnych warunków oraz zasad powiadomień
-- rejestracja i logowanie użytkowników 
+- rejestracja i logowanie użytkowników - dodac linki i gotowe
 
 Ruby version: 2.7.1
 Rails version: 5.2.4
