@@ -1,7 +1,7 @@
 class PlantsController < ApplicationController
 
   def index
-    @plants = Plant.all
+    @plants = current_user.plants.all
   end
 
   def show
@@ -13,7 +13,11 @@ class PlantsController < ApplicationController
   end
 
   def create
-    # @device = Device.new(params[:device_id])
+    # tutaj mozna pewnie pogrzebac jeszcze
+    #
+    # Rails.logger.debug "params: #{params}"
+    # Rails.logger.debug "params[:plant]: #{plant_params}"
+    # @device = Device.find_by(params[:plant][device_id])
     # @plant = @device.schedule.create(plant_params)
     @plant = Plant.new(plant_params)
 
@@ -37,7 +41,7 @@ class PlantsController < ApplicationController
       render 'edit'
     end
   end
-
+  
   def destroy
     @plant = Plant.find(params[:id])
     @plant.destroy

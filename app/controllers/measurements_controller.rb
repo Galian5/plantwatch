@@ -1,19 +1,9 @@
 class MeasurementsController < ApplicationController
-  def index
-  end
-
   def show
-  end
-
-  def new
+    # chyba wrzuce je do widoku danej roslinki
   end
 
   def create
-  end
-
-  def update
-  end
-
-  def destroy
+    # bedzie sie tworzyc przez call z API
   end
 end

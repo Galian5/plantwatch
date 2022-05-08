@@ -14,7 +14,6 @@ class SchedulesController < ApplicationController
 
   def update
   end
-  # moze zmienie nazwe watering, ale zostawie, zeby dalo sie wylaczyc podlewanie i potem sobie wlaczyc z powrotem
 
   def destroy
   end
