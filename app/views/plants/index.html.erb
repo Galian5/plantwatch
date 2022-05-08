@@ -7,10 +7,9 @@
     <%= link_to 'Destroy', plant_path(t.id),
                   method: :delete,
                   data: { confirm: 'Confirm removal of this plant' } %>
+    <%= link_to 'Measurements', plant_measurement_path(t.measurement.id) %>
     <%= link_to "Device: #{t.device.name}", device_path(t.device_id) %>
   </p>
 <% end %>
-
-<!--dobrze by bylo pogrupowac je po urzadzeniach albo w ogole wywalic index-->
 
 <%= link_to 'Add new plant', new_plant_path %>

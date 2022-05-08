@@ -20,7 +20,10 @@ gem 'webpacker'
 # gem for easy managing http calls
 gem 'httparty', '>= 0.13.7'
 
+# Use devise for authentication
 gem 'devise'
+# Use chartkick for charts
+gem "chartkick"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
