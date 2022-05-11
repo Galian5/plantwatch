@@ -8,8 +8,14 @@ Rails.application.routes.draw do
   resources :devices
   resources :users
 
+  namespace :api, defaults: { format: :json } do
+    resources :measurements, only: [:index, :create] do
+      member do
+        post :create
+      end
+    end
+  end
   # chyba chce podpiac plants pod devices. bede musial pozmieniac pathy
-
 
   root 'plants#index'
 end
