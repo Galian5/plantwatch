@@ -23,7 +23,6 @@
 
   <p>
     <%= form.label :device_id %><br>
-    <%#= form.select :device_id, Device.where(user_id: current_user.id).ids %>
     <%= form.select :device_id, options_for_select(Device.where(user_id: current_user.id).collect { | device| [device.name, device.id] }, @device), {}, {} %>
   </p>
 

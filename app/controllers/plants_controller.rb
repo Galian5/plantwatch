@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @plants = current_user.plants.all
@@ -13,13 +14,7 @@ class PlantsController < ApplicationController
   end
 
   def create
-    # tutaj mozna pewnie pogrzebac jeszcze
-    #
-    # Rails.logger.debug "params: #{params}"
-    # Rails.logger.debug "params[:plant]: #{plant_params}"
-    # @device = Device.find_by(params[:plant][device_id])
-    # @plant = @device.schedule.create(plant_params)
-    @plant = Plant.new(plant_params)
+    @plant = current_user.plants.new(plant_params)
 
     if @plant.save
       redirect_to @plant

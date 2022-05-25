@@ -1,15 +1,17 @@
 <h1>Plants!</h1>
 <p>List of your plants, choose which one you want to check</p>
-<% @plants.each do |t| %>
-  <p><%= t.name %>
-    <%= link_to 'Show', plant_path(t.id) %>
-    <%= link_to 'Rename', edit_plant_path(t.id) %>
-    <%= link_to 'Destroy', plant_path(t.id),
-                  method: :delete,
-                  data: { confirm: 'Confirm removal of this plant' } %>
-    <%= link_to 'Measurements', plant_measurement_path(t.measurement.id) %>
-    <%= link_to "Device: #{t.device.name}", device_path(t.device_id) %>
-  </p>
+<% if @plants %>
+  <% @plants.each do |t| %>
+    <p><%= t.name %>
+      <%= link_to 'Show', plant_path(t.id) %>
+      <%= link_to 'Rename', edit_plant_path(t.id) %>
+      <%= link_to 'Destroy', plant_path(t.id),
+                    method: :delete,
+                    data: { confirm: 'Confirm removal of this plant' } %>
+      <%= link_to 'Measurements', plant_measurements_path(t.id) %>
+      <%= link_to "Device: #{t.device.name}", device_path(t.device_id) %>
+    </p>
+  <% end %>
 <% end %>
 
 <%= link_to 'Add new plant', new_plant_path %>

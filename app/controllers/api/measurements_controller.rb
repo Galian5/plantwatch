@@ -1,20 +1,20 @@
-class MeassurementsController < ApplicationController
-  before_action :set_meassurement, only: [:show, :create]
+class Api::MeasurementsController < ApplicationController
+  before_action :set_measurement, only: [:show, :create]
 
-  # Create a new meassurement
-  api :POST, desc: 'meassurements/create'
-  param :plant_id, String, required: true
-  param :attachment, Hash, required: true, allow_nil: false do
-    param :air_humidity, String, required: true
-    param :soil_moisture, String, required: true
-    param :temperature, String, required: true
-    param :temperature, String, required: true
-    param :insolation, String, required: true
-    param :water_amount, String, required: true
+  # Create a new measurement
+  api :POST, desc: 'api/measurements/create'
+  param :measurement, Hash, required: true do
+    param :plant_id, :number, required: true
+    param :air_humidity, :number, required: true
+    param :soil_moisture, :number, required: true
+    param :temperature, :number, required: true
+    param :insolation, :number, required: true
+    param :water_amount, :number, required: true
   end
+
   formats %w[json]
   def create
-    @meassurement = Meassurement.new(meassurement_params)
+    @measurement = measurement.new(measurement_params)
   end
 
   private

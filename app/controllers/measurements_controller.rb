@@ -4,7 +4,9 @@ class MeasurementsController < ApplicationController
   end
 
   def create
-    @measurement = Measurement.new(measurement_params)
+    @plant = Plant.find(params[:plant_id])
+    @measurement = plant.measurement.create(measurement_params)
+    redirect_to plant_path(@plant)
   end
 
   private
