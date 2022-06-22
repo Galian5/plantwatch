@@ -1,2 +1,25 @@
 <h1>Settings#new</h1>
 <p>Find me in app/views/settings/new.html.erb</p>
+<%= form_with scope: :setting, url: plant_settings_path, local: true do |setting| %>
+<%#= form_with(model: [@plant, @setting], url: plant_settings_path, local: true) do |setting| %>
+  <%= setting.label :single_watering_amount %>
+  <%= setting.number_field :single_watering_amount %><br>
+  <%= setting.label :min_air_humidity %>
+  <%= setting.number_field :min_air_humidity %><br>
+  <%= setting.label :max_air_humidity %>
+  <%= setting.number_field :max_air_humidity %><br>
+  <%= setting.label :min_soil_moisture %>
+  <%= setting.number_field :min_soil_moisture %><br>
+  <%= setting.label :max_soil_moisture %>
+  <%= setting.number_field :max_soil_moisture %><br>
+  <%= setting.label :min_temperature %>
+  <%= setting.number_field :min_temperature %><br>
+  <%= setting.label :max_temperature %>
+  <%= setting.number_field :max_temperature %><br>
+  <%= setting.label :max_insolation %>
+  <%= setting.number_field :max_insolation %><br>
+  <%= setting.label :min_water_amount %>
+  <%= setting.number_field :min_water_amount %><br>
+
+  <%= setting.submit %>
+<% end %>

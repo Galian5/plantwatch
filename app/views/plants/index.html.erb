@@ -10,7 +10,7 @@
                     data: { confirm: 'Confirm removal of this plant' } %>
       <%= link_to 'Measurements', plant_measurements_path(plant.id) %>
       <% if plant.setting %>
-        <%= link_to 'Plant settings', edit_plant_setting_path(plant.id, plant.setting.id) %>
+        <%= link_to 'Plant settings', plant_setting_path(plant.id, plant.setting.id) %>
       <% else %>
         <%= link_to 'Plant settings', new_plant_setting_path(plant.id) %>
       <% end %>
