@@ -1,2 +1,7 @@
-<h1>Schedules#show</h1>
-<p>Find me in app/views/schedules/show.html.erb</p>
+<h1>Watering schedule</h1>
+<% if @schedule %>
+  <%= @schedule.attributes %>
+<% else %>
+  <p>No schedule set</p>
+<% end %></br>
+<%= link_to 'Edit', edit_plant_schedule_path(@plant, @schedule) %>
