@@ -14,6 +14,11 @@
       <% else %>
         <%= link_to 'Plant settings', new_plant_setting_path(plant.id) %>
       <% end %>
+      <% if plant.schedule %>
+        <%= link_to 'Watering schedule', plant_schedule_path(plant.id, plant.schedule.id) %>
+      <% else %>
+        <%= link_to 'Watering schedule', new_plant_schedule_path(plant.id) %>
+      <% end %>
       <%= link_to "Device: #{plant.device.name}", device_path(plant.device_id) %>
     </p>
   <% end %>

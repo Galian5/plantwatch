@@ -1,2 +1,8 @@
-<h1>Settings#show</h1>
-<p>Find me in app/views/settings/show.html.erb</p>
+<h1>Settings</h1>
+<p>Show setting parameters</p>
+<% if @setting %>
+  <p>Setting: <%= @setting.attributes %></p>
+<% else %>
+  <p>No setting found</p>
+<% end %>
+<%= link_to 'Edit', edit_plant_setting_path(@plant, @setting) %>

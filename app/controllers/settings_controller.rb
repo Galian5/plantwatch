@@ -19,12 +19,9 @@ class SettingsController < ApplicationController
     end
   end
 
-  def update
-  end
-
   def edit
     @plant = Plant.find(params[:plant_id])
-    # @plant = plant.setting.update(measurement_params)
+    @setting = Setting.find(params[:id])
   end
 
   def destroy
