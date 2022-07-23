@@ -1,6 +1,5 @@
 <h1>Change settings for plant</h1>
 <%= form_with scope: :setting, url: plant_settings_path, local: true do |setting| %>
-<%#= form_with(model: [@plant, @setting], url: plant_settings_path, local: true) do |setting| %>
   <%= setting.label :single_watering_amount %>
   <%= setting.number_field :single_watering_amount %><br>
   <%= setting.label :min_air_humidity %>

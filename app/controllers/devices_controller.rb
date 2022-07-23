@@ -16,7 +16,6 @@ class DevicesController < ApplicationController
   def create
     @user = current_user
     @device = @user.devices.create(device_params)
-    # @device = Device.new(device_params)
 
     if @device.save
       redirect_to @device
