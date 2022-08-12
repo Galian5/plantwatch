@@ -1,7 +1,7 @@
 class Plant < ApplicationRecord
   has_one :schedule, dependent: :destroy
   has_one :setting, dependent: :destroy
-  has_many :measurement, dependent: :destroy
+  has_many :measurements, dependent: :destroy
   belongs_to :device
   belongs_to :user
 
