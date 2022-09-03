@@ -15,7 +15,6 @@ Rails.application.routes.draw do
       end
     end
   end
-  # chyba chce podpiac plants pod devices. bede musial pozmieniac pathy
 
   root 'plants#index'
 end
