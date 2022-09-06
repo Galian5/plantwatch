@@ -57,6 +57,10 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rspec"
   gem 'rspec-rails', '~> 5.0.0'
+
+  # investigate code and solve bugs
+  gem 'pry', '~> 0.13.1'
+  gem 'pry-nav'
 end
 
 group :development do

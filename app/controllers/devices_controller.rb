@@ -24,8 +24,18 @@ class DevicesController < ApplicationController
     end
   end
 
+  def edit
+    @device = Device.find(params[:id])
+  end
+
   def update
     @device = Device.find(params[:id])
+
+    if @device.update(device_params)
+      redirect_to @device
+    else
+      render 'edit'
+    end
   end
 
   def destroy
