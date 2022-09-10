@@ -14,10 +14,9 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new(schedule_params)
 
     if @schedule.save
-
-      redirect_to plants_path(@schedule.plant_id)
+      redirect_to plants_path(@plant)
     else
-      render :new, status: :unprocessable_entity
+      render 'new'
     end
   end
 
