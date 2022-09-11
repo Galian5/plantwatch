@@ -25,6 +25,17 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
   end
 
+  def update
+    @plant = Plant.find(params[:plant_id])
+    @schedule = Schedule.find(params[:id])
+
+    if @schedule.update(schedule_params)
+      redirect_to @plant
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def schedule_params

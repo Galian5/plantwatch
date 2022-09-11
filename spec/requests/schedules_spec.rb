@@ -1,13 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Schedules", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
-  end
-end
-require 'rails_helper'
-
-RSpec.describe "Schedules", type: :request do
   let(:user) { create(:user)}
   let(:device) { create(:device, user_id: user.id) }
   let(:plant) { create(:plant, device_id: device.id, user_id: user.id) }
@@ -76,14 +69,14 @@ RSpec.describe "Schedules", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        { watering: false }
+        { interval: 24 }
       }
 
       it "updates the requested schedule" do
         schedule = Schedule.create! valid_attributes
         patch plant_schedule_url(plant, schedule), params: { schedule: new_attributes }
         schedule.reload
-        expect(schedule.name).to eq("ModifiedScheduleName")
+        expect(schedule.interval).to eq(24)
       end
     end
 
