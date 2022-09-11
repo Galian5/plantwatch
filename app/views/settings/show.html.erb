@@ -4,5 +4,7 @@
   <p>Setting: <%= @setting.attributes %></p>
 <% else %>
   <p>No setting found</p>
-<% end %>
+<% end %></br>
 <%= link_to 'Edit', edit_plant_setting_path(@plant, @setting) %>
+
+<%= link_to 'Back', plants_path %>
