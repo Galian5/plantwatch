@@ -1,19 +1,18 @@
 # README
 
-
 PlantWatch: Aplikacja umożliwiająca monitorowanie warunków rozwoju roślin
 
-Projekt mający na celu stworzenie aplikacji webowej umożliwiającej komunikacje z urządzeniami pomiarowymi monitorowania, przechowywania i analizy pobranych danych.
+Projekt mający na celu stworzenie aplikacji webowej umożliwiającej komunikacje z urządzeniami pomiarowymi, monitorowania, przechowywania i analizy pobranych danych.
 
-planowane funkcjonalności: 
-- [] odbieranie danych z czujników poprzez API
-- [] przechowywanie informacji w bazie danych
-- [] prezentowanie bieżących danych dla wybranego zestawu czujnikow
-- [] prezentowanie danych historycznych dla wybranego zestawu czujników
-- [] powiadomienia o przekroczeniu określonej wartości mierzonej przez czujnik
-- [] możliwość konfiguracji dopuszczalnych warunków oraz zasad powiadomień
-- [x] rejestracja i logowanie użytkowników 
+Instrukcja instalacji:
 
-Ruby version: 2.7.1
-Rails version: 5.2.4
+Aplikacja korzysta z dockera, ktorego proces instalacji różni się w zależnosci od systemu operacyjnego.
+Skorzystaj ze strony https://www.docker.com/ i wybierz opcje odpowiadająca Twojemu systemowi.
+
+Korzystajac z konsoli w katalogu, gdzie znajduje się aplikacja Plantwatch, użyj następujace komendy:
+- docker compose build
+- docker compoose up
+- docker compose run web rake db:create
+
+Aplikacja bedzie dostępna pod adresem http://localhost:3000/
 
