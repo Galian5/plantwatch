@@ -48,6 +48,6 @@ class DevicesController < ApplicationController
   private
 
   def device_params
-    params.require(:device).permit(:name, :user_id)
+    params.require(:device).permit(:name, :user_id, :uri_address)
   end
 end
