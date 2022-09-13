@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>You should check on your plant, <%= @user.name %></h1>
+<p>Conditions of your plant <%= @plant.name %> require your intervention.</p>
+<p>This is how situation looks:</br>
+  air humidity: <%= @measurement[:air_humidity] %></br>
+  soil moisture: <%= @measurement[:soil_moisture] %></br>
+  temperature: <%= @measurement[:temperature] %></br>
+  insolation: <%= @measurement[:insolation] %></br>
+  amount of water left in the container: <%= @measurement[:water_amount] %></br>
+</p>
+<p>
+  If measurement result doesn't rise any concern update setting for this plant <a href="<%= edit_plant_setting_url(@plant, @plant.setting) %>"><%= @plant.name %></a>
+</p>
+</body>
+</html>
