@@ -14,6 +14,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new(schedule_params)
 
     if @schedule.save
+      set_watering_schedule
       redirect_to plants_path(@plant)
     else
       render 'new'
@@ -30,9 +31,26 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
 
     if @schedule.update(schedule_params)
+      set_watering_schedule
       redirect_to @plant
     else
       render 'edit'
+    end
+  end
+
+  def set_watering_schedule
+    Thread.new do
+      params = { "watering" => @schedule.watering, "interval" => @schedule.interval,
+                 "watering_amount" => @plant.setting.single_watering_amount
+      }
+      while true
+        if @plant.device.uri_address
+          x = Net::HTTP.post_form(URI.parse(@plant.device.uri_address), params)
+          puts x.body
+
+          sleep((schedule.interval).hours)
+        end
+      end
     end
   end
 
