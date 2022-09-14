@@ -13,7 +13,7 @@
  */
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-@import "bootstrap";
+
 
 
 .container {
@@ -57,3 +57,9 @@ nav a {
   text-transform: uppercase;
   font-size: 14px;
 }
+
+nav navbar {
+  height: 100%;
+}
+
+@import "bootstrap";

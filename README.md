@@ -16,6 +16,8 @@ Korzystajac z konsoli w katalogu, gdzie znajduje się aplikacja Plantwatch, uży
 
 Aplikacja bedzie dostępna pod adresem http://localhost:3000/
 
+W celu uruchomienia konsoli rails bedac w katalogu uzyj nastepujacej komendy: docker-compose run web rails console
+
 Instrukcja obsługi:
 - konieczne jest założenie konta w celu korzystania z aplikacji
 - aby dodawac monitorowane rosliny wpierw nalezy dodac urzadzenie pomiarowe w zakladce devices
