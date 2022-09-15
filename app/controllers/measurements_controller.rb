@@ -1,7 +1,7 @@
 class MeasurementsController < ApplicationController
   def index
     @plant = Plant.find(params[:plant_id])
-    @measurements = plant.measurements.all
+    @measurements = @plant.measurements.all
   end
 
   private

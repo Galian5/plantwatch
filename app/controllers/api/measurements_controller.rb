@@ -25,12 +25,12 @@ class Api::MeasurementsController < ApplicationController
   end
 
   def should_notify?
-    setting = @plant.setting
-    return measurement_params[:air_humidity] if (measurement_params[:air_humidity] < setting.min_air_humidity || measurement_params[:air_humidity] > setting.max_air_humidity)
-    return measurement_params[:soil_moisture] if (measurement_params[:soil_moisture] < setting.min_soil_moisture || measurement_params[:soil_moisture] > setting.max_soil_moisture)
-    return measurement_params[:temperature] if (measurement_params[:temperature] < setting.min_temperature || measurement_params[:temperature] > setting.max_temperature)
-    return measurement_params[:insolation] if measurement_params[:insolation] > setting.max_insolation
-    return measurement_params[:water_amount] if measurement_params[:water_amount] < setting.min_water_amount
+    @setting = @plant.setting
+    return measurement_params[:air_humidity] if (measurement_params[:air_humidity] < @setting.min_air_humidity || measurement_params[:air_humidity] > @setting.max_air_humidity)
+    return measurement_params[:soil_moisture] if (measurement_params[:soil_moisture] < @setting.min_soil_moisture || measurement_params[:soil_moisture] > @setting.max_soil_moisture)
+    return measurement_params[:temperature] if (measurement_params[:temperature] < @setting.min_temperature || measurement_params[:temperature] > @setting.max_temperature)
+    return measurement_params[:insolation] if measurement_params[:insolation] > @setting.max_insolation
+    return measurement_params[:water_amount] if measurement_params[:water_amount] < @setting.min_water_amount
     false
   end
 

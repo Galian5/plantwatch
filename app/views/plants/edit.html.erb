@@ -1,29 +1,30 @@
 <h1>Rename plant</h1>
 
 <%= form_with(model: @plant, local: true) do |form| %>
+  <div class="form-group">
+    <% if @plant.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@plant.errors.count, "error") %> prohibited
+          this plant from being saved:
+        </h2>
+        <ul>
+          <% @plant.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  <% if @plant.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@plant.errors.count, "error") %> prohibited
-        this plant from being saved:
-      </h2>
-      <ul>
-        <% @plant.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
 
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  </div>
 <% end %>
 
-<%= link_to 'Back', plants_path %>
+<button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>

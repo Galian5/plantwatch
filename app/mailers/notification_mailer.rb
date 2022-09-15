@@ -1,7 +1,7 @@
 class NotificationMailer < ActionMailer::Base
   default from: 'notifications@plantwatch.com'
 
-  def notification_email
+  def notification_mail
     @user = params[:user]
     @plant = params[:plant]
     @measurement = params[:measurement]

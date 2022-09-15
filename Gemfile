@@ -24,6 +24,8 @@ gem 'httparty', '>= 0.13.7'
 gem 'devise'
 # Use chartkick for charts
 gem "chartkick"
+# grouping record by date, used in charts
+gem "groupdate"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

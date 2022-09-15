@@ -1,2 +1,14 @@
-<h1>Measurements#index</h1>
-<p>Find me in app/views/measurements/index.html.erb</p>
+<h1>Measurements</h1>
+<% if @measurements %>
+  <h4>Air humidity</h4>
+  <%= line_chart @measurements.group_by_hour(:created_at).average(:air_humidity)%>
+  <h4>Soil moisture</h4>
+  <%= area_chart @measurements.group_by_hour(:created_at).average(:soil_moisture)%>
+  <h4>Temperature</h4>
+  <%= area_chart @measurements.group_by_hour(:created_at).average(:temperature)%>
+  <h4>Insolation</h4>
+  <%= area_chart @measurements.group_by_hour(:created_at).average(:insolation)%>
+  <h4>Amount of water left in container</h4>
+  <%= area_chart @measurements.group_by_hour(:created_at).average(:water_amount)%>
+<% end %>
+

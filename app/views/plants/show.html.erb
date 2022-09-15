@@ -2,13 +2,18 @@
   <strong>Name of monitored plant:</strong>
   <%= @plant.name %>
 </p>
-<p>
-  <strong>Watering schedule interval:</strong>
-  <%= @plant.schedule.interval if @plant.schedule %>
-</p>
+<% if @plant.schedule.watering %>
+  <p>
+    <strong>Watering schedule interval:</strong>
+    <%= @plant.schedule.interval %>
+  </p>
+<% end %>
+<% if @plant.setting&.single_watering_amount %>
+  <p>
+    <strong>Amount of water per single watering:</strong>
+    <%= @plant.setting.single_watering_amount %>
+  </p>
+<% end %>
 
-<p>Jakies paramy czy wykresy historyczne</p>
-<!--dodac linki do stworzenia pomiarow, schedule i ustawien-->
-<!--mozna zrobic partiale do poszczegolnych elementow-->
 
-<%= link_to 'Back', plants_path %>
+<button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>
