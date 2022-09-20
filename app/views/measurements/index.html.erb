@@ -1,7 +1,7 @@
 <h1>Measurements</h1>
 <% if @measurements %>
   <h4>Air humidity</h4>
-  <%= line_chart @measurements.group_by_hour(:created_at).average(:air_humidity)%>
+  <%= area_chart @measurements.group_by_hour(:created_at).average(:air_humidity)%>
   <h4>Soil moisture</h4>
   <%= area_chart @measurements.group_by_hour(:created_at).average(:soil_moisture)%>
   <h4>Temperature</h4>
