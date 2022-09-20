@@ -11,4 +11,5 @@
   <h4>Amount of water left in container</h4>
   <%= area_chart @measurements.group_by_hour(:created_at).average(:water_amount)%>
 <% end %>
+<button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>
 

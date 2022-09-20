@@ -7,10 +7,13 @@
   <%= @device.uri_address %>
 </p>
 <p>
-  <strong>Plants monitored by this device</strong>
-  <%= @device.plants.each do |plant| %>
-    <%= plant.name %>
+  <strong>Plants monitored by this device:</strong>
+  <% @device.plants.each do |plant| %>
+    <p>
+      <%= plant.name %>
+      <button class="btn btn-outline-secondary"><%= link_to 'Show', plant_path(plant.id)%></button>
+    </p>
   <% end %>
 </p>
 
-<%= link_to 'Back', devices_path %>
+<button class="btn btn-outline-primary"><%= link_to 'Back', devices_path %></button>

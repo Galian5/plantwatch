@@ -1,10 +1,26 @@
 <h1>Settings</h1>
 <p>Show setting parameters</p>
 <% if @setting %>
-  <p>Setting: <%= @setting.attributes %></p>
+  <p>Amount of water in mL per single watering:
+  <%= @setting&.single_watering_amount %></p>
+  <p>Minimum air humidity:
+  <%= @setting&.min_air_humidity %></p>
+  <p>Maximum air humidity:
+  <%= @setting&.max_air_humidity %></p>
+  <p>Minimum soil moisture:
+  <%= @setting&.min_soil_moisture %></p>
+  <p>Maximum soil moisture:
+  <%= @setting&.max_soil_moisture %></p>
+  <p>Minimum temperature:
+  <%= @setting&.min_temperature %></p>
+  <p>Maximum temperature:
+  <%= @setting&.max_temperature %></p>
+  <p>Maximum insolation:
+  <%= @setting&.max_insolation %></p>
+  <p>Minimal amount of water in container:
+  <%= @setting&.min_water_amount %></p>
 <% else %>
   <p>No setting found</p>
 <% end %></br>
-<%= link_to 'Edit', edit_plant_setting_path(@plant, @setting) %>
-
-<%= link_to 'Back', plants_path %>
+<button class="btn btn-outline-primary"><%= link_to 'Edit', edit_plant_setting_path(@plant, @setting) %></button>
+<button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>

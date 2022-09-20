@@ -8,8 +8,6 @@
                   data: { confirm: 'Confirm removal of this device' } %></td></p>
 <% end %>
 
-<!--moze pokazywac tylko urzadzenia dla danego uzytkownika. zalezne od decyzji projektowej-->
 
-
-
-<%= link_to 'Add new device', new_device_path %>
+<button class="btn btn-outline-primary"><%= link_to 'Add new device', new_device_path %></button>
+<button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>
