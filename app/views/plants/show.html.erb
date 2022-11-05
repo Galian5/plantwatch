@@ -2,7 +2,7 @@
   <strong>Name of monitored plant:</strong>
   <%= @plant.name %>
 </p>
-<% if @plant.schedule.watering %>
+<% if @plant.schedule&.watering %>
   <p>
     <strong>Watering schedule interval:</strong>
     <%= @plant.schedule.interval %>
@@ -14,6 +14,10 @@
     <%= @plant.setting.single_watering_amount %>
   </p>
 <% end %>
+
+<% @plant.photos.each do |photo| %>
+  <%= image_tag photo, width:300, height:300  %>
+<% end %><br>
 
 
 <button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>

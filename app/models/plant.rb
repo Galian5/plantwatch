@@ -4,6 +4,7 @@ class Plant < ApplicationRecord
   has_many :measurements, dependent: :destroy
   belongs_to :device
   belongs_to :user
+  has_many_attached :photos
 
   validates :name, presence: true, allow_blank: false
   validates :device_id, presence: true

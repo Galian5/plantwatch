@@ -1,7 +1,7 @@
 <h1>Rename plant</h1>
 
 <%= form_with(model: @plant, local: true) do |form| %>
-  <div class="form-group">
+  <p class="form-group">
     <% if @plant.errors.any? %>
       <div id="error_explanation">
         <h2>
@@ -19,6 +19,11 @@
     <p>
       <%= form.label :name %><br>
       <%= form.text_field :name %>
+    </p>
+
+    <p>
+      <%= form.label :photos %>
+      <%= form.file_field :photos, multiple: true %>
     </p>
 
     <p>
