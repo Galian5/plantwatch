@@ -26,6 +26,11 @@
     <%= form.select :device_id, options_for_select(Device.where(user_id: current_user.id).collect { | device| [device.name, device.id] }, @device), {}, {} %>
   </p>
 
+  <div class="field">
+    <%= form.label :photos %>
+    <%= form.file_field :photos, multiple: true %>
+  </div>
+
   <p>
     <%= form.submit %>
   </p>
