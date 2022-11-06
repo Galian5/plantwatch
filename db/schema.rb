@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_05_212551) do
+ActiveRecord::Schema.define(version: 2022_11_05_185332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,8 +89,6 @@ ActiveRecord::Schema.define(version: 2022_11_05_212551) do
     t.float "min_water_amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_setting_sets_on_user_id"
   end
 
   create_table "settings", force: :cascade do |t|
@@ -128,6 +126,5 @@ ActiveRecord::Schema.define(version: 2022_11_05_212551) do
   add_foreign_key "plants", "devices"
   add_foreign_key "plants", "users"
   add_foreign_key "schedules", "plants"
-  add_foreign_key "setting_sets", "users"
   add_foreign_key "settings", "plants"
 end
