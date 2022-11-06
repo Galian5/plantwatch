@@ -1,5 +1,5 @@
 <h1>Change settings for plant</h1>
-<%= form_with scope: :setting, url: plant_settings_path, local: true do |setting| %>
+<%= form_for [@plant, @setting] do |setting| %>
   <%= setting.label :single_watering_amount %>
   <%= setting.number_field :single_watering_amount %><br>
   <%= setting.label :min_air_humidity %>
@@ -19,6 +19,12 @@
   <%= setting.label :min_water_amount %>
   <%= setting.number_field :min_water_amount %><br>
 
+  <%= setting.submit %>
+<% end %>
+
+<%= form_for [@plant, @setting] do |setting| %>
+  Use predefined Set:
+  <%= setting.collection_select(:setting_set, SettingSet.all, :id, :name) %>
   <%= setting.submit %>
 <% end %>
 

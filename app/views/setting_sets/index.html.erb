@@ -1,0 +1,12 @@
+<h1>Available sets of settings for plants</h1>
+<% @setting_sets.each do |t| %>
+  <p><%= t.name %>   <%= link_to 'Show', setting_set_path(t.id) %>
+  <%= link_to 'Edit', edit_setting_set_path(t.id) %>
+  <td><%= link_to 'Destroy', setting_set_path(t.id),
+                  method: :delete,
+                  data: { confirm: 'Confirm removal of this set' } %></td></p>
+<% end %>
+
+
+<button class="btn btn-outline-primary"><%= link_to 'Add new set', new_setting_set_path %></button>
+<button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>

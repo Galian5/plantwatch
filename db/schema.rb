@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_25_162355) do
+ActiveRecord::Schema.define(version: 2022_11_05_212551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,23 @@ ActiveRecord::Schema.define(version: 2022_10_25_162355) do
     t.index ["plant_id"], name: "index_schedules_on_plant_id"
   end
 
+  create_table "setting_sets", force: :cascade do |t|
+    t.string "name"
+    t.integer "single_watering_amount"
+    t.float "min_air_humidity"
+    t.float "max_air_humidity"
+    t.float "min_soil_moisture"
+    t.float "max_soil_moisture"
+    t.float "min_temperature"
+    t.float "max_temperature"
+    t.float "max_insolation"
+    t.float "min_water_amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_setting_sets_on_user_id"
+  end
+
   create_table "settings", force: :cascade do |t|
     t.integer "single_watering_amount"
     t.float "min_air_humidity"
@@ -111,5 +128,6 @@ ActiveRecord::Schema.define(version: 2022_10_25_162355) do
   add_foreign_key "plants", "devices"
   add_foreign_key "plants", "users"
   add_foreign_key "schedules", "plants"
+  add_foreign_key "setting_sets", "users"
   add_foreign_key "settings", "plants"
 end

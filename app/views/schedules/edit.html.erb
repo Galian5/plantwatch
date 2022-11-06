@@ -1,5 +1,5 @@
 <h1>Change schedule for plant</h1>
-<%= form_with scope: :schedule, url: plant_schedules_path, local: true do |schedule| %>
+<%= form_for [@plant, @schedule] do |schedule| %>
   <%= schedule.label :watering %>
   <%= schedule.check_box :watering %></br>
 

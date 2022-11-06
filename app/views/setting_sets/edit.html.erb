@@ -1,0 +1,27 @@
+<h1>Change setting set</h1>
+<%= form_with scope: :setting_set, url: setting_sets_path, local: true do |setting_set| %>
+  <%= setting_set.label :name %>
+  <%= setting_set.text_field :name  %><br>
+  <%= setting_set.label :single_watering_amount %>
+  <%= setting_set.number_field :single_watering_amount %><br>
+  <%= setting_set.label :min_air_humidity %>
+  <%= setting_set.number_field :min_air_humidity %><br>
+  <%= setting_set.label :max_air_humidity %>
+  <%= setting_set.number_field :max_air_humidity %><br>
+  <%= setting_set.label :min_soil_moisture %>
+  <%= setting_set.number_field :min_soil_moisture %><br>
+  <%= setting_set.label :max_soil_moisture %>
+  <%= setting_set.number_field :max_soil_moisture %><br>
+  <%= setting_set.label :min_temperature %>
+  <%= setting_set.number_field :min_temperature %><br>
+  <%= setting_set.label :max_temperature %>
+  <%= setting_set.number_field :max_temperature %><br>
+  <%= setting_set.label :max_insolation %>
+  <%= setting_set.number_field :max_insolation %><br>
+  <%= setting_set.label :min_water_amount %>
+  <%= setting_set.number_field :min_water_amount %><br>
+
+  <%= setting_set.submit %>
+<% end %>
+
+<%= link_to 'Back', setting_sets_path %>

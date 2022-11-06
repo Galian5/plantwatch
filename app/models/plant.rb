@@ -9,4 +9,14 @@ class Plant < ApplicationRecord
   validates :name, presence: true, allow_blank: false
   validates :device_id, presence: true
   validates :user_id, presence: true
+  validate :photo_type
+
+  private
+  def photo_type
+    photos.each do |photo|
+      unless photo.content_type.in?(%('image/jpeg' image/png'))
+        errors.add(:photos, 'needs to be a JPEG or PNG')
+      end
+    end
+  end
 end
