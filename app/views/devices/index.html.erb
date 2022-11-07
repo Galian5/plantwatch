@@ -1,13 +1,15 @@
 <h1>Available devices</h1>
 <p>List of devices, choose which one you want to check</p>
 <% @devices.each do |t| %>
-  <p><%= t.name %>   <%= link_to 'Show', device_path(t.id) %>
-  <%= link_to 'Edit', edit_device_path(t.id) %>
-  <td><%= link_to 'Destroy', device_path(t.id),
-                  method: :delete,
-                  data: { confirm: 'Confirm removal of this device' } %></td></p>
+  <p>
+    <p style="font-size: x-large; color:darkblue"><%= t.name %></p>
+    <button class="btn btn-primary"><%= link_to 'Show', device_path(t.id), style: "color:white" %></button>
+    <button class="btn btn-primary"><%= link_to 'Edit', edit_device_path(t.id), style: "color:white" %></button>
+    <button class="btn btn-primary"><td><%= link_to 'Destroy', device_path(t.id),
+                  method: :delete, data: { confirm: 'Confirm removal of this device' }, style: "color:white" %></td></button>
+  </p>
 <% end %>
 
 
-<button class="btn btn-outline-primary"><%= link_to 'Add new device', new_device_path %></button>
-<button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>
+<p><button class="btn btn-secondary"><%= link_to 'Add new device', new_device_path, style: "color:white"   %></button></p>
+<button class="btn btn-secondary"><%= link_to 'Back', plants_path, style: "color:white"   %></button>

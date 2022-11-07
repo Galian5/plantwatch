@@ -2,7 +2,7 @@ class SettingSetsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @setting_sets = current_user.setting_sets.all
+    @setting_sets = SettingSet.all
   end
 
   def show
@@ -14,7 +14,7 @@ class SettingSetsController < ApplicationController
   end
 
   def create
-    @setting_set = current_user.setting_sets.new(setting_sets_params)
+    @setting_set = SettingSet.new(setting_sets_params)
 
     if @setting_set.save
       p setting_sets_params
@@ -49,7 +49,6 @@ class SettingSetsController < ApplicationController
 
   def setting_sets_params
     params.require(:setting_set).permit(:name,
-                                       :user_id,
                                        :single_watering_amount,
                                        :min_air_humidity,
                                        :max_air_humidity,

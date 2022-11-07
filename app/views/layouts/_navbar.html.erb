@@ -4,14 +4,14 @@
       <nav>
         <div class="float-end">
           <ul>
-            <li><button type="button"><%= link_to "Plants", plants_path %></button></li>
-            <li><button type="button"><%= link_to "Devices", devices_path %></button></li>
-            <li><button type="button"><%= link_to "Setting Sets", setting_sets_path %></button></li>
+            <li><button class="btn btn-success"><%= link_to "Plants", plants_path %></button></li>
+            <li><button class="btn btn-success"><%= link_to "Devices", devices_path %></button></li>
+            <li><button class="btn btn-success"><%= link_to "Setting Sets", setting_sets_path %></button></li>
             <% if user_signed_in? %>
-              <li><button type="button"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button></li>
+              <li><button class="btn btn-success"><%= link_to "Log out", destroy_user_session_path, method: :delete %></button></li>
             <% else %>
-              <li><button type="button"><%= link_to "Log in", new_user_session_path %></button></li>
-              <li><button type="button"><%= link_to "Sign up", new_user_registration_path %></button></li>
+              <li><button class="btn btn-success"><%= link_to "Log in", new_user_session_path %></button></li>
+              <li><button class="btn btn-success"><%= link_to "Sign up", new_user_registration_path %></button></li>
             <% end %>
           </ul>
         </div>

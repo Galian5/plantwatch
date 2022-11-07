@@ -1,12 +1,18 @@
 <h1>Change schedule for plant</h1>
 <%= form_for [@plant, @schedule] do |schedule| %>
-  <%= schedule.label :watering %>
-  <%= schedule.check_box :watering %></br>
+  <p>
+    <%= schedule.label :watering %>
+    <%= schedule.check_box :watering %></br>
+  </p>
 
-  <%= schedule.label :interval %>
-  <%= schedule.number_field :interval %> h</br>
+  <p>
+    <%= schedule.label :interval %>
+    <%= schedule.number_field :interval %> h</br>
+  </p>
 
-  <%= schedule.submit %>
+  <p>
+    <%= schedule.submit "Update Schedule", style: "color:white" ,class:"btn btn-primary" %>
+  </p>
 <% end %>
 
-<%= link_to 'Back', plants_path %>
+<button class="btn btn-secondary"><%= link_to 'Back', plants_path, style: "color:white"   %></button>

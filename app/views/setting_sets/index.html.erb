@@ -1,12 +1,14 @@
 <h1>Available sets of settings for plants</h1>
 <% @setting_sets.each do |t| %>
-  <p><%= t.name %>   <%= link_to 'Show', setting_set_path(t.id) %>
-  <%= link_to 'Edit', edit_setting_set_path(t.id) %>
-  <td><%= link_to 'Destroy', setting_set_path(t.id),
-                  method: :delete,
-                  data: { confirm: 'Confirm removal of this set' } %></td></p>
+  <p>
+    <p style="font-size: x-large; color:darkblue"><%= t.name %></p>
+    <button class="btn btn-primary"><%= link_to 'Show', setting_set_path(t.id), style: "color:white"  %></button>
+    <button class="btn btn-primary"><%= link_to 'Edit', edit_setting_set_path(t.id), style: "color:white"  %></button>
+        <button class="btn btn-primary"><td><%= link_to 'Destroy', setting_set_path(t.id),
+                    method: :delete, data: { confirm: 'Confirm removal of this set' }, style: "color:white"  %></td></button>
+  </p>
 <% end %>
 
 
-<button class="btn btn-outline-primary"><%= link_to 'Add new set', new_setting_set_path %></button>
-<button class="btn btn-outline-primary"><%= link_to 'Back', plants_path %></button>
+<button class="btn btn-secondary"><%= link_to 'Add new set', new_setting_set_path, style: "color:white"   %></button>
+<button class="btn btn-secondary"><%= link_to 'Back', plants_path, style: "color:white"   %></button>
