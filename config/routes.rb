@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :devices
   resources :users
+  resources :setting_sets
 
   namespace :api, defaults: { format: :json } do
     resources :measurements, only: [:index, :create] do
@@ -18,9 +19,3 @@ Rails.application.routes.draw do
 
   root 'plants#index'
 end
-
-
-# mozna przemyslec shallow nesting
-# resources :articles do
-#   resources :comments, shallow: true
-# end

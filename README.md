@@ -12,7 +12,7 @@ Skorzystaj ze strony https://www.docker.com/ i wybierz opcje odpowiadająca Twoj
 Korzystajac z konsoli w katalogu, gdzie znajduje się aplikacja Plantwatch, użyj następujace komendy:
 - docker compose build
 - docker compoose up
-- docker compose run web rake db:create
+- docker compose run web rake db:setup
 
 Aplikacja bedzie dostępna pod adresem http://localhost:3000/
 

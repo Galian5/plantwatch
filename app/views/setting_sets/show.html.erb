@@ -1,0 +1,24 @@
+<h1>Setting set</h1>
+<p>Set: <%= @setting_set.name %></p>
+
+<p>Amount of water in mL per single watering:
+  <%= @setting_set&.single_watering_amount %></p>
+<p>Minimum air humidity:
+  <%= @setting_set&.min_air_humidity %></p>
+<p>Maximum air humidity:
+  <%= @setting_set&.max_air_humidity %></p>
+<p>Minimum soil moisture:
+  <%= @setting_set&.min_soil_moisture %></p>
+<p>Maximum soil moisture:
+  <%= @setting_set&.max_soil_moisture %></p>
+<p>Minimum temperature:
+  <%= @setting_set&.min_temperature %></p>
+<p>Maximum temperature:
+  <%= @setting_set&.max_temperature %></p>
+<p>Maximum insolation:
+  <%= @setting_set&.max_insolation %></p>
+<p>Minimal amount of water in container:
+  <%= @setting_set&.min_water_amount %></p>
+
+<button class="btn btn-secondary"><%= link_to 'Edit', edit_setting_set_path(@setting_set), style: "color:white"   %></button>
+<button class="btn btn-secondary"><%= link_to 'Back', setting_sets_path, style: "color:white"   %></button>

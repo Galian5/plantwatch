@@ -1,27 +1,26 @@
-<h1>Plants!</h1>
-<p>List of your plants, choose which one you want to check</p>
+<h1>Your plants</h1>
 <% if @plants %>
   <% @plants.each do |plant| %>
-  <p><p style="font-size: large"><%= plant.name %>:</p>
-      <button class="btn btn-outline-secondary"><%= link_to 'Show', plant_path(plant.id) %></button>
-      <button class="btn btn-outline-secondary"><%= link_to 'Rename', edit_plant_path(plant.id) %></button>
-      <button class="btn btn-outline-secondary"><%= link_to 'Destroy', plant_path(plant.id),
+  <p><p style="font-size: x-large; color:darkblue"><%= plant.name %>:</p>
+      <button class="btn btn-primary"><%= link_to 'Show', plant_path(plant.id), style: "color:white" %></button>
+      <button class="btn btn-primary"><%= link_to 'Edit', edit_plant_path(plant.id), style: "color:white" %></button>
+      <button class="btn btn-primary"><%= link_to 'Destroy', plant_path(plant.id),
                     method: :delete,
-                      data: { confirm: 'Confirm removal of this plant' } %></button>
-      <button class="btn btn-outline-secondary"><%= link_to 'Measurements', plant_measurements_path(plant.id) %></button>
+                      data: { confirm: 'Confirm removal of this plant' }, style: "color:white"  %></button>
+      <button class="btn btn-primary"><%= link_to 'Measurements', plant_measurements_path(plant.id), style: "color:white"  %></button>
       <% if plant.setting %>
-        <button class="btn btn-outline-secondary"><%= link_to 'Plant settings', plant_setting_path(plant.id, plant.setting.id) %></button>
+        <button class="btn btn-primary"><%= link_to 'Plant settings', plant_setting_path(plant.id, plant.setting.id), style: "color:white"  %></button>
       <% else %>
-        <button class="btn btn-outline-secondary"><%= link_to 'Plant settings', new_plant_setting_path(plant.id) %></button>
+        <button class="btn btn-primary"><%= link_to 'Plant settings', new_plant_setting_path(plant.id), style: "color:white"  %></button>
       <% end %>
       <% if plant.schedule %>
-        <button class="btn btn-outline-secondary"><%= link_to 'Watering schedule', plant_schedule_path(plant.id, plant.schedule.id) %></button>
+        <button class="btn btn-primary"><%= link_to 'Watering schedule', plant_schedule_path(plant.id, plant.schedule.id), style: "color:white"  %></button>
       <% else %>
-        <button class="btn btn-outline-secondary"><%= link_to 'Watering schedule', new_plant_schedule_path(plant.id) %></button>
+        <button class="btn btn-primary"><%= link_to 'Watering schedule', new_plant_schedule_path(plant.id), style: "color:white"  %></button>
       <% end %>
-      <button class="btn btn-outline-secondary"><%= link_to "Device: #{plant.device.name}", device_path(plant.device_id) %></button>
+      <button class="btn btn-primary"><%= link_to "Device: #{plant.device.name}", device_path(plant.device_id), style: "color:white"  %></button>
     </p>
   <% end %>
 <% end %>
 
-<button class="btn btn-outline-primary"><%= link_to 'Add new plant', new_plant_path %></button>
+<button class="btn btn-secondary"><%= link_to 'Add new plant', new_plant_path, style: "color:white"  %></button>

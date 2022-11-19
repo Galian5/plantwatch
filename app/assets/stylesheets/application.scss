@@ -26,7 +26,7 @@
 }
 
 header {
-  background: #55d6aa;
+  background: -webkit-radial-gradient(circle at bottom, #e1fd3e, #174709);
 }
 
 header::after {
@@ -60,6 +60,15 @@ nav a {
 
 nav navbar {
   height: 100%;
+}
+
+body {
+  margin: 0;
+  background: -webkit-radial-gradient(circle farthest-corner, #e1fd3e, #174709);
+  background: -moz-radial-gradient(circle farthest-corner, #e1fd3e, #174709);
+  background: -ms-radial-gradient(circle farthest-corner, #e1fd3e, #174709);
+  background: -o-radial-gradient(circle farthest-corner, #e1fd3e, #174709);
+  background: radial-gradient( farthest-corner circle at left bottom, #e1fd3e, #174709);
 }
 
 @import "bootstrap";

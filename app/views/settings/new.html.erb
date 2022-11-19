@@ -1,5 +1,6 @@
 <h1>Create settings for plant</h1>
 <p>Choose those settings that you are interested in. All of them are optional</p>
+
 <%= form_with scope: :setting, url: plant_settings_path, local: true do |setting| %>
   <%= setting.label :single_watering_amount %>
   <%= setting.number_field :single_watering_amount %><br>
@@ -21,4 +22,12 @@
   <%= setting.number_field :min_water_amount %><br>
 
   <%= setting.submit %>
+<% end %><br>
+
+<%= form_with scope: :setting, url: plant_settings_path, local: true do |setting| %>
+  Use predefined Set:
+    <%= setting.collection_select(:setting_set, SettingSet.all, :id, :name) %>
+    <%= setting.submit %>
 <% end %>
+
+<button class="btn btn-secondary"><%= link_to 'Back', plants_path, style: "color:white"   %></button>
