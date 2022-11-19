@@ -3,7 +3,7 @@
   <% @plants.each do |plant| %>
   <p><p style="font-size: x-large; color:darkblue"><%= plant.name %>:</p>
       <button class="btn btn-primary"><%= link_to 'Show', plant_path(plant.id), style: "color:white" %></button>
-      <button class="btn btn-primary"><%= link_to 'Rename', edit_plant_path(plant.id), style: "color:white" %></button>
+      <button class="btn btn-primary"><%= link_to 'Edit', edit_plant_path(plant.id), style: "color:white" %></button>
       <button class="btn btn-primary"><%= link_to 'Destroy', plant_path(plant.id),
                     method: :delete,
                       data: { confirm: 'Confirm removal of this plant' }, style: "color:white"  %></button>
